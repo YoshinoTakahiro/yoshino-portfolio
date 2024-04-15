@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>portfolio</title>
+        <meta name="description" content="UI/WEB Design portfolio">
+        <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link href="./css/css2" rel="stylesheet">
+        <!-- fontAwesome -->
+        <link rel="stylesheet" href="./css/all.css">
+        <!-- wow animate -->
+        <link rel="stylesheet" href="./css/animate.css">
+
+        <!-- css -->
+        <link rel="stylesheet" href="./css/animate.css">
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/subpage.css">
+	</head>
+
+	<body class="blog_bg" cz-shortcut-listen="true">
+        <!--header -->
+        <header id="header" class="header">
+            <div class="header_wrap inner">
+                <h1 class="header_logo">
+                    <a href="index.html">portfolio</a>
+                </h1>
+                <div class="openbtn fadeDownTrigger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav class="g-nav">
+                    <div id="g-nav-list">
+                        <ul class="gnavi nav01d">
+                            <li class="nav_list"><a href="index.html#works">Works</a></li>
+                            <li class="nav_list"><a href="index.html#blog">BLOG</a></li>
+                            <li class="nav_list"><a href="index.html#about">About</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="circle-bg"></div>
+            </div>
+        </header>
+
+		<!-- blog -->
+		<div class="blog">
+			<!-- fv -->
+			<div class="inner">
+				<div class="blog_fv wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+					<img src="./img/object/Blog3.jpg" alt="OOUIオブジェクト指向">
+				</div>
+			</div>
+			<!-- text -->
+			<div class="blog_inner">
+				<div class="blog_wrapper">
+					<div class="blog_title">オブジェクト指向のデザイン思考</div>
+					<div class="blog_text">
+						<p>
+							初めてUIデザインをした時に、見やすさや美しさなど表面的な部分にばかり目がいきがちでした。
+							しかし、UIデザインはUIの構造設計が使いやすさを大きく左右してくることをOOUI（オブジェクト指向UI）という概念を知ることで変化しました。<br>
+							以降このオブジェクト指向は私自身も日々のUIを考える際に意識しており、UI設計をする上での一つの指針となり、知識を整理する意味でも今回学んだ事をまとめることで自分の理解が進むと思い記録しておきます。
+						</p>
+						<p>
+							まず前提としてUIは主に「オブジェクト指向」か「タスク指向」のどちらからで制作され、この2つには明確な違いがあります。<br>
+							メッセージアプリを例にして分かりやすく説明します。
+						</p>
+						<img src="./img/object/Blog3_1.jpg" alt="オブジェクト指向とタスク指向">
+						<p>
+							<span>タスク指向</span>
+							まずタスク指向の「タスク」とは、動詞のことを表します。<br>
+							選択肢ごとにモードが別れていて、状態切替を中心にしています。<br>
+							選択肢ベースに構成しており、タスクごとに専用の画面があるイメージです。
+						</p>
+						<img src="./img/object/Blog3_2.jpg" alt="タスク指向">
+						このタスク指向にはユーザー視点に立つとUIとしてのデメリットがあります。<br>
+						<span class="bold">1.タップ数が増えてしまう</span>
+						<span class="bold">2.タスクを選択しないとメッセージが見れない</span>
+						<span class="bold">3.選択（タスク）を変更したり戻りたい時に手間がかかる</span>
+						<span class="bold">4.UIの画面構成や設計が複雑になってしまう</span>
+						<p>
+							<span>オブジェクト指向</span>
+							オブジェクト指向の「オブジェクト」とは、名詞やモノのことを表します。<br>
+							具体的にはECサイト内の商品の服や食べ物などを指します。<br>
+							(今回は通知一覧)<br>
+							この、ユーザーが認識できるモノ「オブジェクト」を起点にUIを設計する手法をオブジェクト指向UIと呼びます。
+						</p>
+						<img src="./img/object/Blog3_3.jpg" alt="オブジェクト指向">
+						<img src="./img/object/Blog3_4.jpg" alt="オブジェクト指向">
+						オブジェクト指向UIの一番の利点は「ユーザーが直感的に操作でき、目的にたどり着きやすい」こと。<br>
+						<span class="bold">■画面間の無駄な行き来が減るため、操作効率が上がる。</span>
+						<span class="bold">■ユーザーの目当てであるオブジェクトが画面に並んでいるため、日常生活と同じように対象物を直接操作できる。</span>
+						<span class="bold">■制作側はオブジェクトの観点で情報や機能が整理されているため、オブジェクトに対する操作の追加がしやすい。</span>
+						<p>
+							タスク指向とオブジェクト指向で作られたUIを比較してみるとオブジェクト指向で作られたUIの方が画面数が少なく、かつユーザーの目標となるオブジェクトが最初に出てきているのでより直感的に操作可能となっています。<br>
+							オブジェクト指向UIのほうが優れていて、タスク指向UIは必要ないと最初に思いましたがそんなことはなく、それぞれの指向の特徴があり適材適所で使い分けられることが大切だと学ぶ中で感じました。<br>
+							例えば、ATMのUIは、自分の口座という「オブジェクト」に対して引き出しや残高確認をするため、「タスク」だけで完結する方が使いやすいですし、実際にタスク指向です。コピー機のUIも似た構成ですね。
+							オブジェクト指向UIよりタスク指向UIが向いているのは、ユーザーを目的に対して「エラーなく誘導したい」ケースです。<br>
+						</p>
+						<!-- <p>まとめると、<br>
+							<span>行いたい事「タスク」<br>
+								目当てのもの「オブジェクト」→行いたい事「タスク」
+							</span>
+							<span>タスク指向UI<br>
+								行いたい事「タスク」→目当てのもの「オブジェクト」
+							</span>
+						</p> -->
+						<p>
+							<span>OOUIでの設計方法</span>
+							オブジェクト=UIで表現するメインの情報<br>
+							そのオブジェクトによってどのようなUIになるのか決まる。<br>
+							抽出したオブジェクトの要素はユーザーに届けたいものである必要があり重点的に考えてオブジェクトの中身を決めること<br>
+							つまり課題やニーズに対して必要なオブジェクトを考えてることは要件にあったUIをつくることができるので重要なもの。
+						</p>
+						<p>
+							オブジェクト指向UIを実際のUIを作成する流れやポイントを下記に図式化してまとめました。
+						</p>
+						<img src="./img/object/Blog3_5.jpg" alt="UI作成フロー">
+						<img src="./img/object/Blog3_6.jpg" alt="ユーザーフローからオブジェクトを洗い出す">
+						<img src="./img/object/Blog3_7.jpg" alt="抽出したオブジェクトでユーザー×目的で必要な”情報の要素”を考える">
+						抽出したオブジェクトを今度はUI画面フロー図にすることで整理することができます。<br>
+						整理する手順のポイントとして<br>
+						<span>1.オブジェクトから必要なページと構造を考える</span>
+						<span>2.ルートナビ（起点になるページ）を決める</span>
+						<span>3.アクションを考える</span>
+						<p>
+							ルートナビとは「ユーザーが最初に想起するページの集まり、起点」になり最上位のナビゲーション項目です。<br>
+							※グローバルナビやボトムナビと言われる。
+						</p>
+						<img src="./img/object/Blog3_8.jpg" alt="UIフロー図">
+						オブジェクトとの関係性のポイント<br>
+						<span>■どのオブジェクトが必要で重要なのか定義</span>
+						<span>■定義したオブジェクトがどのような関係性であるか</span>
+						<span>■ページ内の表示情報・アクションを整理すること<br>（フロー図に書き出しまとめる）</span>
+						<p>
+							UIフロー図を設計した後にようやくレイアウトの作成のフェーズにいきますが、ここではレイアウトやデザインについては割愛します。
+						</p>
+						<p>
+							おわりに<br>
+							<span class="bold">
+								OOUIを学んでみて、OOUIはUIデザインの基本となる強力な概念であり、起こせる変化も大きいと言うことを実感しました。<br>
+								よって良いUIを制作するためには情報設計の部分に対してオブジェクトをベースに考えることが大切だと感じました。<br>
+								OOUIを実践して、より良いアプリやWEBサービスをデザインしていきます。
+							</span>
+						</p>
+						<p>
+							ご覧いただきありがとうございました。
+						</p>
+					</div>
+				</div>
+			</div>
+		
+
+		</div>
+
+		<!-- top-link -->
+        <div class="top_btn">
+            <a href="object.html#" class="top_link"></a>
+        </div>
+		<!-- footer -->
+		<footer class="footer">
+			<div class="copy-right">&copy;yoshino</div>
+		</footer>
+
+
+        <!-- jquery -->
+        <script src="./js/jquery.min.js"></script>
+        <!-- wow animate -->
+        <script src="./js/wow.min.js"></script>
+        <!-- js -->
+        <script src="./js/script.js"></script>
+
+
+	</body>
+</html>

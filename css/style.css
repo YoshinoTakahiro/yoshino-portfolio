@@ -1,0 +1,1524 @@
+@charset "UTF-8";
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+div,
+span,
+img,
+a,
+table,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+header,
+footer,
+nav,
+section,
+article,
+aside,
+figure,
+figcaption {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+    list-style-type: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/*========= ローディング画面のためのCSS ===============*/
+#splash {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 9999999;
+    text-align: center;
+    color: #fff;
+}
+
+#splash-logo {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-40%, -50%);
+    transform: translate(-40%, -50%);
+}
+
+#splash-logo img {
+    width: 50px;
+}
+
+/*画面遷移アニメーション*/
+.splashbg {
+    display: none;
+}
+
+#splash-logo {
+    font-size: 3rem;
+    letter-spacing: 0.1em;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #1e1c1d;
+}
+
+.bgappear {
+    -webkit-animation-name: bgextendAnimeSecond;
+    animation-name: bgextendAnimeSecond;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@-webkit-keyframes bgextendAnimeSecond {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bgextendAnimeSecond {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.bgLRextend::before {
+    -webkit-animation-name: bgLRextendAnime;
+    animation-name: bgLRextendAnime;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #1e1c1d;
+    /*伸びる背景色の設定*/
+}
+
+@-webkit-keyframes bgLRextendAnime {
+    0% {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+
+    50% {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+
+    50.001% {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+    }
+
+    100% {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+}
+
+@keyframes bgLRextendAnime {
+    0% {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+
+    50% {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+
+    50.001% {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+    }
+
+    100% {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+}
+
+body.appear .splashbg {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    background-color: #1e1c1d;
+    /*伸びる背景色の設定*/
+    -webkit-animation-name: PageAnime;
+    animation-name: PageAnime;
+    -webkit-animation-duration: 1.2s;
+    animation-duration: 1.2s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes PageAnime {
+    0% {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+    }
+
+    50% {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+
+    50.001% {
+        -webkit-transform-origin: top;
+        transform-origin: top;
+    }
+
+    100% {
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+    }
+}
+
+@keyframes PageAnime {
+    0% {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+    }
+
+    50% {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+
+    50.001% {
+        -webkit-transform-origin: top;
+        transform-origin: top;
+    }
+
+    100% {
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+    }
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#wrapper {
+    opacity: 0;
+    /*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #wrapper {
+    -webkit-animation-name: PageAnimeAppear;
+    animation-name: PageAnimeAppear;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@-webkit-keyframes PageAnimeAppear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes PageAnimeAppear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6em;
+    margin: 0;
+    background: #efefef;
+    color: #1e1c1d;
+    overflow-x: hidden;
+    background: url(../img/bg.jpg);
+    background-position: top;
+    background-size: 2400px auto;
+    background-repeat: repeat-y;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+    margin: 0;
+    background-color: #efefef;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    body {
+        background-size: 1400px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: 800px auto;
+    }
+}
+
+.is-sp {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .is-sp {
+        display: block;
+    }
+}
+
+.is-pc {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .is-pc {
+        display: none;
+    }
+}
+
+.inner {
+    width: 1440px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .inner {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .inner {
+        padding: 0 20px;
+    }
+}
+
+.section {
+    padding: 180px 0 0;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 100px 0 0;
+    }
+}
+
+.section_title {
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    display: block;
+    text-transform: uppercase;
+    font-size: 5rem;
+    font-weight: 700;
+    font-style: italic;
+    font-family: "Montserrat", sans-serif;
+    max-width: 600px;
+    letter-spacing: 0.3rem;
+    text-align: center;
+    margin: 0 auto;
+    color: transparent;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .section_title {
+        font-size: 3.5rem;
+    }
+}
+
+.section_title::after {
+    position: absolute;
+    content: "Works";
+    color: #1e1c1d;
+    top: 0px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-text-stroke: 2px #1e1c1d;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .section_title::after {
+        top: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section_title::after {
+        top: 0px;
+    }
+}
+
+.section_title::before {
+    position: absolute;
+    content: "Works";
+    top: 5px;
+    left: 51%;
+    -webkit-transform: translateX(-51%);
+    transform: translateX(-51%);
+    color: #e8b57c;
+    -webkit-text-stroke: 2px rgb(185, 33, 54);
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .section_title::before {
+        top: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section_title::before {
+        top: 4px;
+        left: 51%;
+        -webkit-transform: translateX(-52%);
+        transform: translateX(-52%);
+        -webkit-text-stroke: 1px rgb(185, 33, 54);
+    }
+}
+
+.section_title-lead {
+    text-align: center;
+    margin: 30px auto 0;
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: "Noto Sans JP", sans-serif;
+    color: #1e1c1d;
+}
+
+@media (max-width: 768px) {
+    .section_title-lead {
+        margin-top: 14px;
+        font-size: 2rem;
+    }
+}
+
+header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-style: italic;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    width: 100%;
+    height: 80px;
+    line-height: inherit;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    header {
+        background: transparent;
+        height: 70px;
+    }
+}
+
+.header_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.header_logo {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.4rem;
+    margin-top: 12px;
+}
+
+.header_logo a {
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .header_logo {
+        font-size: 2rem;
+        margin-top: 4px;
+    }
+}
+
+.g-nav {
+    margin-left: auto;
+}
+
+.gnavi {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    list-style: none;
+    font-weight: 600;
+}
+
+.gnavi a {
+    display: block;
+    padding: 10px 30px;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+.nav_list a {
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .nav_list a {
+        display: none;
+    }
+}
+
+.nav_list a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: rgb(185, 33, 54);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    /*X方向0、Y方向1*/
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    /*左上基点*/
+}
+
+.nav_list:nth-child(2) a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: #e8b57c;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    /*X方向0、Y方向1*/
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    /*左上基点*/
+}
+
+.nav_list:nth-child(3) a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: #1e1c1d;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    /*X方向0、Y方向1*/
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    /*左上基点*/
+}
+
+/*現在地の形状の設定*/
+.nav_list.current a::after {
+    -webkit-transform: scale(0.2, 1);
+    transform: scale(0.2, 1);
+    /*X方向に0.2スケール拡大*/
+}
+
+/*現在地を含むhoverの設定*/
+.nav_list.current a:hover::after,
+.nav01d li a:hover::after {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    /*X方向にスケール拡大*/
+}
+
+.openbtn {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    /*ボタン外側*/
+    .openbtn {
+        position: fixed;
+        display: block;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+        /*ボタンを最前面に*/
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        background: #1e1c1d;
+        border-radius: 5px;
+    }
+
+    /*ボタン内側*/
+    .openbtn span {
+        display: inline-block;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        /*アニメーションの設定*/
+        position: absolute;
+        left: 14px;
+        height: 3px;
+        border-radius: 2px;
+        background: #fff;
+    }
+
+    .openbtn span:nth-of-type(1) {
+        top: 15px;
+        width: 45%;
+    }
+
+    .openbtn span:nth-of-type(2) {
+        top: 23px;
+        width: 35%;
+    }
+
+    .openbtn span:nth-of-type(3) {
+        top: 31px;
+        width: 20%;
+    }
+
+    /*activeクラスが付与されると線が回転して×になる*/
+    .openbtn.active {
+        background: #efefef;
+    }
+
+    .openbtn.active span:nth-of-type(1) {
+        top: 18px;
+        left: 18px;
+        -webkit-transform: translateY(6px) rotate(-135deg);
+        transform: translateY(6px) rotate(-135deg);
+        width: 30%;
+        background: #1e1c1d;
+    }
+
+    .openbtn.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    .openbtn.active span:nth-of-type(3) {
+        top: 30px;
+        left: 18px;
+        -webkit-transform: translateY(-6px) rotate(135deg);
+        transform: translateY(-6px) rotate(135deg);
+        width: 30%;
+        background: #1e1c1d;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /*アクティブになったエリア*/
+    .g-nav.panelactive {
+        /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        right: inherit;
+        width: 100%;
+        height: 100vh;
+    }
+
+    /*丸の拡大*/
+    .circle-bg {
+        position: fixed;
+        z-index: 3;
+        /*丸の形*/
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #333;
+        /*丸のスタート位置と形状*/
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        right: -15px;
+        top: -15px;
+        -webkit-transition: all 0.6s;
+        transition: all 0.6s;
+    }
+
+    .circle-bg.circleactive {
+        -webkit-transform: scale(50);
+        transform: scale(50);
+    }
+
+    /*ナビゲーションの縦スクロール*/
+    .g-nav-list {
+        display: none;
+        /*はじめは表示なし*/
+        /*ナビの数が増えた場合縦スクロール*/
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .g-nav.panelactive .g-nav-list {
+        display: block;
+    }
+
+    /*ナビゲーション*/
+    .g-nav ul {
+        opacity: 0;
+        /*はじめは透過0*/
+        /*ナビゲーション天地中央揃え*/
+        position: absolute;
+        z-index: 999;
+        top: 50%;
+        left: 50%;
+        margin-left: -18px;
+        color: #efefef;
+        font-size: 2rem;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    /*背景が出現後にナビゲーションを表示*/
+    .g-nav.panelactive ul {
+        opacity: 1;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    /*リストのレイアウト設定*/
+    .g-nav.panelactive li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .g-nav.panelactive li a {
+        padding: 15px 0;
+        font-weight: bold;
+        display: block;
+    }
+}
+
+.mainVisual {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    margin-top: 80px;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .mainVisual {
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainVisual__body {
+        padding: 30px 35px;
+        margin-top: -60px;
+        margin-right: 15px;
+        /* width: 100%; */
+        width: 90%;
+    }
+}
+
+.mainVisual__ph {
+    margin-left: 20vw;
+    /* 125px（カンプサイズ・以下同） */
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .mainVisual__ph {
+        margin-left: 0;
+        height: 90vh;
+    }
+}
+
+.mainVisual__ph .main_sp,
+.mainVisual__ph .main_pc {
+    display: block;
+    width: 85%;
+}
+
+@media (max-width: 768px) {
+
+    .mainVisual__ph .main_sp,
+    .mainVisual__ph .main_pc {
+        width: 100%;
+        height: 74vh;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: 0 100%;
+        object-position: 0 100%;
+    }
+}
+
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+.main_pc {
+    display: block !important;
+}
+
+.main_sp {
+    display: none !important;
+}
+
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+@media only screen and (max-width: 750px) {
+    .main_pc {
+        display: none !important;
+    }
+
+    .main_sp {
+        display: block !important;
+    }
+}
+
+.mainVisual_title {
+    line-height: 30px;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 5%;
+    bottom: 50%;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+    padding: 10px;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .mainVisual_title {
+        bottom: 8%;
+        left: 0%;
+        -webkit-transform: translateY(20%);
+        transform: translateY(20%);
+    }
+}
+
+.mainVisual_title p {
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    display: inline;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin: 20px 0;
+    font-size: 3.2rem;
+    font-weight: 700;
+    font-style: italic;
+    font-family: "Montserrat", sans-serif;
+    font-size: 400%;
+    font-weight: 700;
+    line-height: 2.2;
+    letter-spacing: 10px;
+    border-radius: 2px;
+    -webkit-box-shadow: 1px 1px 10px #979595;
+    box-shadow: 1px 1px 10px #979595;
+    background-color: #1e1c1d;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .mainVisual_title p {
+        font-size: 300%;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainVisual_title p {
+        font-size: 200%;
+    }
+}
+
+.mainVisual_title p .first {
+    position: relative;
+}
+
+.mainVisual_title p .first::after {
+    position: absolute;
+    content: "UI/UX・WEB";
+    top: -40px;
+    left: -4px;
+    color: #fff;
+    -webkit-text-stroke: 2px #efefef;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .mainVisual_title p .first::after {
+        top: -30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainVisual_title p .first::after {
+        top: -20px;
+    }
+}
+
+.mainVisual_title p .first::before {
+    position: absolute;
+    content: "UI/UX・WEB";
+    top: -35px;
+    left: 0px;
+    color: transparent;
+    -webkit-text-stroke: 2px #efefef;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .mainVisual_title p .first::before {
+        top: -27px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainVisual_title p .first::before {
+        top: -17px;
+        -webkit-text-stroke: 1px #efefef;
+    }
+}
+
+.mainVisual_title p .second {
+    position: relative;
+}
+
+.mainVisual_title p .second::after {
+    position: absolute;
+    content: "Design";
+    top: -40px;
+    left: -4px;
+    color: #fff;
+    -webkit-text-stroke: 2px #efefef;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .mainVisual_title p .second::after {
+        top: -30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainVisual_title p .second::after {
+        top: -20px;
+    }
+}
+
+.mainVisual_title p .second::before {
+    position: absolute;
+    content: "Design";
+    top: -35px;
+    left: 0px;
+    color: transparent;
+    -webkit-text-stroke: 2px #e8b57c;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .mainVisual_title p .second::before {
+        top: -26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainVisual_title p .second::before {
+        top: -17px;
+        -webkit-text-stroke: 1px #e8b57c;
+    }
+}
+
+.mainVisual_title p .third {
+    position: relative;
+}
+
+.mainVisual_title p .third::after {
+    position: absolute;
+    content: "PORTFOLIO";
+    top: -40px;
+    left: -4px;
+    color: #fff;
+    -webkit-text-stroke: 2px #efefef;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .mainVisual_title p .third::after {
+        top: -30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainVisual_title p .third::after {
+        top: -20px;
+    }
+}
+
+.mainVisual_title p .third::before {
+    position: absolute;
+    content: "PORTFOLIO";
+    top: -35px;
+    left: 0px;
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(185, 33, 54);
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .mainVisual_title p .third::before {
+        top: -26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainVisual_title p .third::before {
+        top: -17px;
+        -webkit-text-stroke: 1px rgb(185, 33, 54);
+    }
+}
+
+.works_lists {
+    margin-top: 60px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+    .works_lists {
+        margin-top: 20px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.works_list {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .works_list {
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+}
+
+.works_list {
+    position: relative;
+}
+
+.works_list figure {
+    position: relative;
+    overflow: hidden;
+}
+
+.works_list figure::before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: -30%;
+    top: -260%;
+    width: 230%;
+    height: 200%;
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.works_list figure::after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: -30%;
+    top: -260%;
+    width: 230%;
+    height: 200%;
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+    background: -webkit-gradient(linear, left top, right bottom, from(rgba(86, 86, 86, 0.5)), to(rgba(65, 66, 71, 0.3)));
+    background: linear-gradient(to bottom right, rgba(86, 86, 86, 0.5), rgba(65, 66, 71, 0.3));
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.works_list figure img {
+    display: block;
+    width: 100%;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.works_list figure figcaption {
+    opacity: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    color: #fff;
+    z-index: 3;
+}
+
+.works_list figure figcaption .figcaption_text {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.works_list figure figcaption .figcaption_text>p {
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@media (min-width: 768px) {
+    .works_list:hover figure img {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        -webkit-filter: blur(1px);
+        filter: blur(1px);
+    }
+
+    .works_list:hover figure::before {
+        top: 0;
+    }
+
+    .works_list:hover figure::after {
+        top: 0;
+        -webkit-transition-delay: 0.2s;
+        transition-delay: 0.2s;
+    }
+
+    .works_list:hover figure figcaption {
+        opacity: 1;
+        -webkit-transition-delay: 0.2s;
+        transition-delay: 0.2s;
+    }
+}
+
+.works_label {
+    display: inline-block;
+    text-transform: uppercase;
+    background: #1e1c1d;
+    color: #fff;
+    border-radius: 2px;
+    margin: 10px 0 0;
+    padding: 2px 8px;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    .works_label {
+        font-size: 1.2rem;
+        margin: 8px 0 0;
+        line-height: 1.3;
+        padding: 2px 4px;
+    }
+}
+
+.works_title {
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 14px 0 16px;
+    font-family: "Noto Sans JP", sans-serif;
+    color: #1e1c1d;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .works_title {
+        font-size: 2.4rem;
+        margin: 8px 0;
+    }
+}
+
+.works_lead {
+    font-size: 2rem;
+    margin: 16px 0;
+    font-weight: 500;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .works_lead {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .works_lead {
+        font-size: 1.6rem;
+        margin: 4px 0 0;
+    }
+}
+
+.works_lead span {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .works_lead span {
+        line-height: 0.5;
+    }
+}
+
+.blog .section_title::after {
+    content: "blog";
+}
+
+.blog .section_title::before {
+    content: "blog";
+}
+
+.blog_lists {
+    margin-top: 60px;
+    display: grid;
+    gap: 80px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+    .blog_lists {
+        margin-top: 20px;
+        gap: 30px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.blog_list figure {
+    overflow: hidden;
+}
+
+.blog_list figure img {
+    display: block;
+    width: 100%;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+@media (min-width: 768px) {
+    .blog_list:hover figure img {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+}
+
+.blog_title {
+    font-size: 2.4rem;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .blog_title {
+        font-size: 1.8rem;
+        margin: 10px 0 0;
+    }
+}
+
+.about .section_title::after {
+    content: "about";
+}
+
+.about .section_title::before {
+    content: "about";
+}
+
+.about_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .about_wrap {
+        display: block;
+        margin-top: 30px;
+    }
+}
+
+.about_icon {
+    width: 30%;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .about_icon {
+        width: 50%;
+    }
+}
+
+.about_icon img {
+    display: block;
+    width: 100%;
+}
+
+.about_text {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.8;
+    width: 65%;
+}
+
+@media (max-width: 768px) {
+    .about_text {
+        width: 100%;
+        font-size: 1.6rem;
+        margin-top: 20px;
+        letter-spacing: 0.09rem;
+    }
+}
+
+.about_title {
+    font-size: 3rem;
+    margin: 60px 0 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .about_title {
+        font-size: 2rem;
+        margin: 30px 0 0;
+    }
+}
+
+.about_policy {
+    width: 700px;
+    max-width: 100%;
+    margin: 50px auto;
+}
+
+@media (max-width: 768px) {
+    .about_policy {
+        width: 60%;
+        margin: 20px auto;
+    }
+}
+
+.about_policy img {
+    width: 100%;
+    display: block;
+}
+
+.message-text {
+    margin: 120px 0 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    .message-text {
+        margin: 60px 0 0;
+        font-size: 1.6rem;
+    }
+}
+
+.top_link {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #1e1c1d;
+    display: block;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    height: 50px;
+    width: 50px;
+    border-radius: 4px;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+@media (max-width: 768px) {
+    .top_link {
+        bottom: 16px;
+        right: 16px;
+    }
+}
+
+.top_link:after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 20px;
+    left: 15px;
+    width: 15px;
+    height: 15px;
+    border-right: 3px solid #1e1c1d;
+    border-top: 3px solid #1e1c1d;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.top_link.add-scrolled {
+    opacity: 1;
+    visibility: visible;
+}
+
+.footer {
+    background: #1e1c1d;
+    margin: 30px auto 0;
+    padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        margin: 30px auto 0px;
+        padding: 10px 0;
+    }
+}
+
+.copy-right {
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .copy-right {
+        font-size: 1.2rem;
+    }
+}
