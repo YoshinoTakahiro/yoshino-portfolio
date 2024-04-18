@@ -873,8 +873,16 @@ header {
 
 @media (max-width: 768px) {
 
-    .mainVisual__ph .main_sp,
-    .mainVisual__ph .main_pc {
+    .mainVisual__ph .mainVisual__ph {
+        width: 100%;
+        height: 74vh;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: 0 100%;
+        object-position: 0 100%;
+    }
+
+    .main_pc{
         width: 100%;
         height: 74vh;
         -o-object-fit: cover;
