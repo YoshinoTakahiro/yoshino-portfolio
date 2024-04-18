@@ -880,7 +880,6 @@ header {
         -o-object-fit: cover;
         object-fit: cover;
         -o-object-position: 0 100%;
-        object-position: 0 100%;
     }
 }
 
