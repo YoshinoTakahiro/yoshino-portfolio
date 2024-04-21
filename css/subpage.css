@@ -490,7 +490,7 @@ header {
 .copy-right {
     color: #fff;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 768px) {
@@ -760,7 +760,7 @@ header {
 
 .voicom {
     color: #3562ff;
-    background-color: #efefef;
+    background-color: #fff;
 }
 
 .voicom .sub_fv {

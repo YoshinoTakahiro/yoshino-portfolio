@@ -334,29 +334,15 @@ body {
     background: #efefef;
     color: #1e1c1d;
     overflow-x: hidden;
-    background: url(../img/bg.jpg);
-    background-position: top;
-    background-size: 2400px auto;
-    background-repeat: repeat-y;
     -webkit-text-size-adjust: none;
     -moz-text-size-adjust: none;
     -ms-text-size-adjust: none;
     text-size-adjust: none;
     margin: 0;
-    background-color: #efefef;
+    background-color: #fff;
 }
 
-@media (min-width: 768px) and (max-width: 1100px) {
-    body {
-        background-size: 1400px auto;
-    }
-}
 
-@media (max-width: 768px) {
-    body {
-        background-size: 800px auto;
-    }
-}
 
 .is-sp {
     display: none;
@@ -1521,7 +1507,7 @@ header {
 .copy-right {
     color: #fff;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 768px) {
